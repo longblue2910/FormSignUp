@@ -1,0 +1,44 @@
+﻿@model UserDemo.Views.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row">
+    <h1>Đăng Nhập</h1>
+    <hr />
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Đăng nhập" class="form-control btn btn-primary" />
+                <br /> <br />
+                <a href="#">Quên mật khẩu?</a>
+                <hr />
+                
+                <a asp-controller="Home" asp-action="Create"  class="form-control btn btn-success">Tạo tài khoản mới</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

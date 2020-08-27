@@ -1,0 +1,158 @@
+﻿@model UserDemo.Models.User;
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>ĐĂNG KÍ TÀI KHOẢN</h1>
+<p>Nếu bạn đã có tài khoản xin hãy đăng nhập tại <a asp-controller="Home" asp-action="Login">đây</a></p>
+<a href="#">Quên mật khẩu?</a>
+<br />
+<h4>Thông tin cá nhân</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input placeholder="Họ và tên" asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input placeholder="E-mail" asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input placeholder="Số điện thoại" asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <h4>Mật khẩu của bạn</h4>
+            <hr />
+            <div class="form-group">
+                <label asp-for="Pwd" class="control-label"></label>
+                <input placeholder="Mật khẩu" asp-for="Pwd" class="form-control" type="password" />
+                <span asp-validation-for="Pwd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPwd" class="control-label"></label>
+                <input placeholder="Nhập lại mật khẩu" asp-for="ConfirmPwd" class="form-control" type="password" />
+                <span asp-validation-for="ConfirmPwd" class="text-danger"></span>
+            </div>
+            <h4>Thông tin địa chỉ</h4>
+            <hr />
+
+
+            <div class="form-group">
+                <label asp-for="Province" for="ddlProvince">Tỉnh thành</label>
+                <input asp-for="Province" type="hidden" />
+                <select id="ddlProvince" class="form-control" onclick="getAllDistByPID(this.value)">
+                    <option value="">Chọn tỉnh thành</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="District" for="ddlDistrict">Quận/Huyện</label>
+                <input asp-for="District" type="hidden" />
+                <select id="ddlDistrict" class="form-control" onclick="getAllWardByPID(this.value)">
+                    <option value="">Chọn quận/huyện</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wards" for="ddlWard">Phường/Xã</label>
+                <input asp-for="Wards" type="hidden" />
+                <select id="ddlWard" class="form-control">
+                    <option value="">Chọn phường/xã</option>
+                </select>
+            </div>
+            @*<div class="col-md-12">
+            <div class="text-success">
+                Bạn đang ở khu vực: <div id="divResult"></div>
+            </div>
+        </div>*@
+
+
+
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input placeholder="Số nhà tên đường" asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" onclick="return getName();" value="Tạo tài khoản" class="btn btn-primary" />
+                <br />
+                <div class="form-group">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @if (ViewBag.Messenger != null)
+                    {
+                        <div class="alert alert-success">@ViewBag.Messenger</div>
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        getAllProvinces();
+        function getAllProvinces() {
+            $.ajax({
+                url: '/Home/GetAllProvinces',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    for (let i = 0; i < data.length; i++) {
+                        console.log(data[i]);
+                        $('#ddlProvince').append(`<option value='${data[i].id}'>${data[i]._name}</option>`);
+                    }
+                }
+            });
+        }
+        function getAllDistByPID(id) {
+            $.ajax({
+                url: '/Home/GetAllDistrictByProvinceId/' + id,
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    $('#ddlDistrict').html('<option value="">Chọn quận/huyện</option>');
+                    for (let i = 0; i < data.length; i++) {
+                        $('#ddlDistrict').append(`<option value='${data[i].id}'>${data[i]._name}</option>`);
+                    }
+                }
+            });
+        }
+        function getAllWardByPID(id) {
+            $.ajax({
+                url: '/Home/GetAllWardByDistrictId/' + id,
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    $('#ddlWard').html('<option value="">Chọn phường/xã</option>');
+                    for (let i = 0; i < data.length; i++) {
+                        $('#ddlWard').append(`<option value='${data[i].id}'>${data[i]._name}</option>`);
+                    }
+                }
+            });
+        }
+        $("#ddlWard").on('change', function () {
+            var provinceText = $("#ddlProvince option:selected").text();
+            var districtText = $("#ddlDistrict option:selected").text();
+            var wardText = $("#ddlWard option:selected").text();
+            var html = "Tỉnh thành: " + provinceText + " " + "Quận huyện: " + districtText + " " + "Xã phường: " + wardText;
+            $("#divResult").html(html);
+        });
+        function getName() {
+     
+            console.log($("#ddlProvince option:selected").text(), $("#ddlWard option:selected").text());
+            document.getElementById('Province').value= $("#ddlProvince option:selected").text();
+            document.getElementById('Wards').value = $("#ddlWard option:selected").text();
+            document.getElementById('District').value =$("#ddlDistrict option:selected").text();
+            console.log(document.getElementById('ddlProvince').value, document.getElementById('ddlWard').value);
+            return true;
+        }
+    </script>
+}

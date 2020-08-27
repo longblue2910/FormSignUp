@@ -8661,19 +8661,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Long\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Long\\Documents\\Module 3\\User\\UserDemo\\UserDemo\\UserDemo.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\Source\\Repos\\FormSignUp\\UserDemo\\UserDemo\\UserDemo.csproj",
       "projectName": "UserDemo",
-      "projectPath": "C:\\Users\\Long\\Documents\\Module 3\\User\\UserDemo\\UserDemo\\UserDemo.csproj",
-      "packagesPath": "C:\\Users\\Long\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Long\\Documents\\Module 3\\User\\UserDemo\\UserDemo\\obj\\",
+      "projectPath": "C:\\Users\\ASUS\\Source\\Repos\\FormSignUp\\UserDemo\\UserDemo\\UserDemo.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ASUS\\Source\\Repos\\FormSignUp\\UserDemo\\UserDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Long\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8744,20 +8744,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.3, 3.1.3]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[3.1.0, 3.1.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[3.1.0, 3.1.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

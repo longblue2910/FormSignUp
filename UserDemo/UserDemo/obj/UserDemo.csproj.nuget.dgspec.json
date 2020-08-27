@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Source\\Repos\\FormSignUp\\UserDemo\\UserDemo\\UserDemo.csproj": {}
+    "C:\\Users\\ASUS\\Source\\Repos\\FormSign\\UserDemo\\UserDemo\\UserDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Source\\Repos\\FormSignUp\\UserDemo\\UserDemo\\UserDemo.csproj": {
+    "C:\\Users\\ASUS\\Source\\Repos\\FormSign\\UserDemo\\UserDemo\\UserDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Source\\Repos\\FormSignUp\\UserDemo\\UserDemo\\UserDemo.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Source\\Repos\\FormSign\\UserDemo\\UserDemo\\UserDemo.csproj",
         "projectName": "UserDemo",
-        "projectPath": "C:\\Users\\ASUS\\Source\\Repos\\FormSignUp\\UserDemo\\UserDemo\\UserDemo.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Source\\Repos\\FormSign\\UserDemo\\UserDemo\\UserDemo.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Source\\Repos\\FormSignUp\\UserDemo\\UserDemo\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Source\\Repos\\FormSign\\UserDemo\\UserDemo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

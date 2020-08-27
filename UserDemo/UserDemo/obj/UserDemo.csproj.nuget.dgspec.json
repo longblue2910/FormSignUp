@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Long\\Documents\\Module 3\\User\\UserDemo\\UserDemo\\UserDemo.csproj": {}
+    "C:\\Users\\Long\\Desktop\\User\\UserDemo\\UserDemo\\UserDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Long\\Documents\\Module 3\\User\\UserDemo\\UserDemo\\UserDemo.csproj": {
+    "C:\\Users\\Long\\Desktop\\User\\UserDemo\\UserDemo\\UserDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Long\\Documents\\Module 3\\User\\UserDemo\\UserDemo\\UserDemo.csproj",
+        "projectUniqueName": "C:\\Users\\Long\\Desktop\\User\\UserDemo\\UserDemo\\UserDemo.csproj",
         "projectName": "UserDemo",
-        "projectPath": "C:\\Users\\Long\\Documents\\Module 3\\User\\UserDemo\\UserDemo\\UserDemo.csproj",
+        "projectPath": "C:\\Users\\Long\\Desktop\\User\\UserDemo\\UserDemo\\UserDemo.csproj",
         "packagesPath": "C:\\Users\\Long\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Long\\Documents\\Module 3\\User\\UserDemo\\UserDemo\\obj\\",
+        "outputPath": "C:\\Users\\Long\\Desktop\\User\\UserDemo\\UserDemo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Long\\AppData\\Roaming\\NuGet\\NuGet.Config",
